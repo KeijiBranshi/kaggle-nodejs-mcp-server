@@ -1,9 +1,11 @@
 {
   "name": "kaggle-croissant-mcp-server",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "build": "tsc && chmod 755 build/index.js"
+    "start": "node dist/index.js",
+    "build": "node build.mjs",
+    "prepare": "npm run build"
   },
   "keywords": [],
   "author": "",
@@ -16,13 +18,14 @@
   },
   "devDependencies": {
     "@types/node": "^22.14.0",
+    "esbuild": "^0.25.6",
     "typescript": "^5.8.3"
   },
   "type": "module",
   "bin": {
-    "kaggle-croissant": "./build/index.js"
+    "kaggle-mcp": "./dist/index.js"
   },
   "files": [
-    "build"
+    "dist"
   ]
 }
